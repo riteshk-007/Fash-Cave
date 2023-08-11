@@ -1,1 +1,231 @@
 @import "../../mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap");
+.header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .note {
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #f0f0f0;
+    text-align: center;
+  }
+  .navbar {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+
+    .left {
+      height: 100%;
+      width: 33%;
+      position: relative;
+      .menu {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        .menu-btn {
+          cursor: pointer;
+          font-size: 20px;
+        }
+        @include md {
+          display: none;
+        }
+      }
+      ul {
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        display: none;
+        .li {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 20px;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-family: system-ui;
+          position: relative;
+          &:hover {
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: 0;
+              background: #000;
+            }
+          }
+        }
+        .li:hover {
+          .categories {
+            visibility: visible !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        .categories {
+          position: absolute;
+          background: #ffffff;
+          width: 600px;
+          height: 430px;
+          box-shadow: rgba(0, 0, 0, 0.1) -1px -2px 6px 1px,
+            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          top: 100%;
+          left: 0%;
+          visibility: hidden;
+          opacity: 0;
+          z-index: 99;
+          span {
+            height: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: space-evenly;
+            flex-direction: column;
+            p {
+              text-transform: uppercase;
+              font-size: 14px;
+              font-size: 200;
+            }
+            li {
+              font-size: 12px;
+              font-weight: 500;
+              list-style: none;
+              transition: all 0.2s;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                "Helvetica Neue", sans-serif;
+              cursor: pointer;
+              flex-wrap: wrap;
+              display: flex;
+              &:hover {
+                color: gray;
+              }
+            }
+            img {
+              height: 150px;
+              object-fit: cover;
+              cursor: auto;
+            }
+          }
+        }
+        @include md {
+          display: flex;
+        }
+      }
+    }
+    .middle {
+      width: 33%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      h1 {
+        font-family: "Playfair Display SC", serif;
+        font-size: 20px;
+        @include md {
+          font-size: 30px;
+        }
+      }
+    }
+    .right {
+      width: 33%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .icon {
+        margin: 0px 5px;
+        cursor: pointer;
+        @include md {
+          .icon {
+            margin: 0px 10px;
+          }
+        }
+      }
+      .icon-md {
+        display: none;
+      }
+
+      @include md {
+        .icon-md {
+          display: block;
+        }
+      }
+      .cart-icon {
+        position: relative;
+        span {
+          position: absolute;
+          background: #000;
+          color: #fff;
+          font-size: 12px;
+          padding: 0px 5px;
+          right: 1px;
+          bottom: -1px;
+          border-radius: 100%;
+          font-family: monospace;
+          text-align: center;
+        }
+      }
+      .serach {
+        position: absolute;
+        background: #fff;
+        z-index: 99;
+        top: 100%;
+        right: 0;
+        height: 80px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 10px;
+        width: 100vw;
+        animation: show 0.4s ease;
+        @keyframes show {
+          to {
+            height: 80px;
+          }
+          from {
+            height: 00px;
+          }
+        }
+        input {
+          border: none;
+          border-bottom: 1px solid black;
+          width: 80%;
+          outline: none;
+          padding: 5px;
+          font-size: 17px;
+        }
+        .icon {
+          cursor: pointer;
+        }
+      }
+      @include md {
+        .serach {
+          width: 100%;
+        }
+      }
+    }
+    @include md {
+      justify-content: space-evenly;
+    }
+  }
+}

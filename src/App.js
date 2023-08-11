@@ -6,9 +6,12 @@ import About from "./Pages/About/About";
 import Products from "./Pages/Products/Products";
 import Product from "./Pages/Product/Product";
 import Search from "./Pages/Search/Search";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
-    <>
+    <div className="app">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -16,7 +19,8 @@ function App() {
         <Route path="/product/:id" element={<Product />} />
         <Route path="/search/:query" element={<Search />} />
       </Routes>
-    </>
+      <Footer />
+    </div>
   );
 }
 
