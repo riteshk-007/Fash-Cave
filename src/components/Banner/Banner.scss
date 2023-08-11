@@ -1,1 +1,77 @@
 @import "../../mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap");
+.banner {
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .banner-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    width: 100%;
+    @include md {
+      transform: translate(-50%, -65%);
+      top: 50%;
+    }
+    h1 {
+      font-size: 20px;
+      flex-wrap: wrap;
+      padding: 10px;
+      font-weight: 200;
+      font-family: "Playfair Display SC", serif;
+      text-transform: lowercase;
+    }
+    @include sm {
+      h1 {
+        font-size: 30px;
+      }
+    }
+    @include md {
+      h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+    }
+    @include lg {
+      h1 {
+        font-size: 60px;
+      }
+    }
+    p {
+      text-align: center;
+      text-transform: capitalize;
+      margin: 10px 0;
+      font-size: 9px;
+      @include md {
+        margin: 30px 0;
+        font-size: 15px;
+      }
+    }
+    button {
+      background: #000;
+      color: #fff;
+      padding: 10px 30px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background: gray;
+      }
+      @include md {
+        padding: 18px 50px;
+      }
+    }
+  }
+}
