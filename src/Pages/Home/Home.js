@@ -6,6 +6,7 @@ import NewArrivals from "../../components/NewArrivals/NewArrivals";
 import HeroModel from "../../components/HeroModel/HeroModel";
 import About from "../../components/About/About";
 import HeroModel2 from "../../components/HeroModel2/HeroModel2";
+import Attribute from "../../components/Attribute/Attribute";
 function Home() {
   return (
     <div className="home">
@@ -15,6 +16,7 @@ function Home() {
       <HeroModel />
       <About />
       <HeroModel2 />
+      <Attribute />
     </div>
   );
 }

@@ -17,7 +17,6 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 16px;
-    padding: 0px 20px;
     text-align: center;
     font-weight: 100;
     font-weight: lighter;
@@ -26,7 +25,7 @@
   @include md {
     span {
       font-size: 48px;
-      padding: 0px 563px;
+      width: 767px;
       margin: 68px 0;
       font-family: auto;
     }
