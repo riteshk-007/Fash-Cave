@@ -1,1 +1,44 @@
 @import "../../mixins.scss";
+.heroModel2 {
+  width: 100%;
+  height: 50vh;
+  background: url("https://gatsby-ecommerce-theme.netlify.app/banner3.png")
+    no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  h1 {
+    margin: 15px 0;
+    font-size: 30px;
+    font-family: "Playfair Display SC";
+    text-align: center;
+  }
+  @include md {
+    h1 {
+      font-size: 65px;
+    }
+  }
+  p {
+    margin: 30px 0;
+    text-align: center;
+  }
+  button {
+    background: #000;
+    color: #fff;
+    padding: 18px 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: gray;
+    }
+  }
+}
+@include md {
+  .heroModel2 {
+    height: 80vh;
+  }
+}
