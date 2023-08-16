@@ -1,7 +1,6 @@
 @import "../../mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap");
 .header {
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   .note {
     width: 100%;
     padding: 8px;

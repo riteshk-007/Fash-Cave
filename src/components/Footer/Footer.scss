@@ -1,1 +1,131 @@
 @import "../../mixins.scss";
+
+.footer {
+  width: 100%;
+  background: #383634;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .left,
+    .center,
+    .right {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 20px;
+      color: aliceblue;
+      span {
+        margin: 10px 0;
+      }
+      p {
+        color: aliceblue;
+        margin: 10px 0;
+        font-size: 14px;
+      }
+      .style {
+        color: aliceblue;
+        margin: 10px 0;
+        font-size: 14px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          background: aliceblue;
+          bottom: -3px;
+          transform-origin: left;
+          transition: all 0.2s;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+      }
+
+      .inputTag {
+        width: 100%;
+        background: #ffffff;
+        padding: 10px;
+        color: #383634;
+        margin: 20px 0px;
+        display: flex;
+        input {
+          width: 90%;
+          height: 100%;
+          border: none;
+          outline: none;
+        }
+        .tag {
+          margin: 0px 5px;
+          cursor: pointer;
+        }
+      }
+      @include md {
+        .inputTag {
+          width: 300px;
+        }
+      }
+      .icons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 10px 0;
+        a {
+          color: #ffffff;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        @include md {
+          a {
+            margin: 0px 15px;
+          }
+        }
+      }
+      @include md {
+        .icons {
+          justify-content: start;
+        }
+      }
+    }
+    .right {
+      padding: 0 15px;
+    }
+  }
+  hr {
+    width: 100%;
+  }
+  .bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      span {
+        color: #b8b8b8;
+        font-size: 13px;
+      }
+      .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
