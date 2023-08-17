@@ -100,7 +100,11 @@ function Header() {
           />
           <BsSuitHeart className="icon icon-md" fontSize={20} />
           <PiUserCircleThin className="icon icon-md" fontSize={25} />
-          <span className="cart-icon" style={{ cursor: "pointer" }}>
+          <span
+            className="cart-icon"
+            style={{ cursor: "pointer" }}
+            onClick={() => setCart(true)}
+          >
             <BsHandbag className="icon" fontSize={18} />
             <span>0</span>
           </span>
