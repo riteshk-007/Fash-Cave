@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.scss";
 import Banner from "../../components/Banner/Banner";
 import Categories from "../../components/Categories/Categories";
@@ -8,6 +8,9 @@ import About from "../../components/About/About";
 import HeroModel2 from "../../components/HeroModel2/HeroModel2";
 import Attribute from "../../components/Attribute/Attribute";
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className="home">
       <Banner />
