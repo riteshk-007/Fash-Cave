@@ -9,7 +9,7 @@ function HeroModel2() {
         From caring for our land to supporting our people, discover the steps
         we’re taking to do <br></br> more for the world around us.
       </p>
-      <Link to={"/products"}>
+      <Link to={"/"}>
         <button>SHOP NOW</button>
       </Link>
     </div>

@@ -8,10 +8,10 @@ function HeroModel() {
         -50% off<br></br> All Essentials
       </h1>
       <span>
-        <Link className="link style" to={"/"}>
+        <Link className="link style" to={"/products/women"}>
           WOMEN
         </Link>
-        <Link className="link style" to={"/"}>
+        <Link className="link style" to={"/products/men"}>
           MEN
         </Link>
       </span>

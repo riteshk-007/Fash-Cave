@@ -10,7 +10,7 @@ import Attribute from "../../components/Attribute/Attribute";
 function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
   return (
     <div className="home">
       <Banner />

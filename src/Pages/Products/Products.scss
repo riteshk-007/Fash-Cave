@@ -1,1 +1,103 @@
 @import "../../mixins.scss";
+.products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+  .filter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: sticky;
+    top: 129px;
+    z-index: 95;
+    background: #fff;
+    padding: 10px;
+    @include md {
+      justify-content: flex-end;
+      width: 70%;
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  }
+  .container {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    @include md {
+      padding: 10px;
+      width: 70%;
+    }
+    .slide {
+      display: flex;
+      width: 120px;
+      margin: 10px 0;
+      .card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        img {
+          height: 85%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+        span {
+          display: flex;
+          flex-direction: column;
+          margin-top: 8px;
+          h5 {
+            font-family: "Quattrocento";
+            margin: 2px 0;
+            font-weight: 600;
+            color: gray;
+            @include md {
+              margin: 5px 0;
+            }
+          }
+          p {
+            font-family: "Quattrocento";
+            font-weight: 500;
+            font-size: 15px;
+          }
+        }
+        .heart {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          cursor: pointer;
+          color: #616161;
+        }
+      }
+    }
+    @include sm {
+      .slide {
+        width: 160px;
+      }
+    }
+    @include md {
+      .slide {
+        width: 227px;
+      }
+    }
+    @include lg {
+      .slide {
+        width: 400px;
+      }
+    }
+  }
+}

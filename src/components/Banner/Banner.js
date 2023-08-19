@@ -13,7 +13,7 @@ function Banner() {
           Essentials for <br></br> a cold winter
         </h1>
         <p>Discover Autumn Winter 2021</p>
-        <Link to={"/products"}>
+        <Link to={"/"}>
           <button>SHOP NOW</button>
         </Link>
       </div>

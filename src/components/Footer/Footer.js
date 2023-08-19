@@ -45,7 +45,7 @@ function Footer() {
             sales, new product launches and exclusive offers!
           </p>
           <div className="inputTag">
-            <input type="text" />
+            <input type="text" placeholder="Email..." />
             <AiOutlineArrowRight className="tag" />
           </div>
           <div className="icons">

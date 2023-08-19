@@ -43,27 +43,47 @@ function Header() {
             </span>
           </span>
           <ul>
-            <Link className="link li" to={"/"}>
+            <Link className="link li">
               Shop
               <div className="categories ">
                 <span>
                   <p>Women</p>
-                  <li>All Clothing</li>
-                  <li>Sweatshirts & Hoodies</li>
-                  <li>Jackets</li>
-                  <li>Trousers</li>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>All Clothing</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Sweatshirts & Hoodies</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Jackets</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Trousers</li>
+                  </Link>
                 </span>
                 <span>
                   <p>Men</p>
-                  <li>All Clothing</li>
-                  <li>Sweatshirts & Hoodies</li>
-                  <li>Jackets</li>
-                  <li>Trousers</li>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>All Clothing</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Sweatshirts & Hoodies</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Jackets</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Trousers</li>
+                  </Link>
                 </span>
                 <span>
                   <p>ACCESSORIES</p>
-                  <li>Caps & Scarves</li>
-                  <li>Bags</li>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Caps & Scarves</li>
+                  </Link>
+                  <Link to={`/products/${1}`} className="link">
+                    <li>Bags</li>
+                  </Link>
                   <img
                     src="https://images.pexels.com/photos/17664823/pexels-photo-17664823/free-photo-of-fashion.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt=""
