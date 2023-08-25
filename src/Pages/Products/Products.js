@@ -36,7 +36,7 @@ function Products() {
       }
     };
     fetchCategories();
-  }, [id.category]);
+  }, [id.category, setLoading]);
 
   // Render loading bubbles if data is loading
   if (loading === false) {

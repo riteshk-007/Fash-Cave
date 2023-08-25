@@ -56,22 +56,21 @@ function Product() {
   // Fetch product data based on the ID parameter
   useEffect(() => {
     window.scrollTo(0, 0);
+    const fetchProductData = async () => {
+      setLoading(false);
+      try {
+        const { data } = await fetchDataFromApi(
+          `/api/products?populate=*&[filters][id]=${id}`
+        );
+        setProduct(data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      } finally {
+        setLoading(true);
+      }
+    };
     fetchProductData();
-  }, [id]);
-
-  const fetchProductData = async () => {
-    setLoading(false);
-    try {
-      const { data } = await fetchDataFromApi(
-        `/api/products?populate=*&[filters][id]=${id}`
-      );
-      setProduct(data);
-    } catch (error) {
-      console.error("Error fetching product data:", error);
-    } finally {
-      setLoading(true);
-    }
-  };
+  }, [id, setLoading, loading]);
 
   // Render loading bubbles if data is loading
   if (!loading) {
