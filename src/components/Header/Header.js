@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import "./Header.scss";
 import Mobile from "../Mobile/Mobile";
 import Cart from "../Cart/Cart";
-
 import { BsSuitHeart, BsHandbag } from "react-icons/bs";
 import { PiUserCircleThin } from "react-icons/pi";
 import { BiMenu, BiSearch } from "react-icons/bi";
@@ -20,14 +18,15 @@ function Header() {
 
   const searchQueryHandler = (event) => {
     if (
-      (event?.key === "Enter" || event === "searchButton") &&
-      searchQuery?.length > 0
+      (event.key === "Enter" || event === "searchButton") &&
+      searchQuery.length > 0
     ) {
       navigate(`/search/${searchQuery}`);
       setShow(false);
       setSearchQuery("");
     }
   };
+
   return (
     <div className="header">
       <span className="note">Free shipping worldwide</span>
@@ -42,8 +41,10 @@ function Header() {
               )}
             </span>
           </span>
+
           <ul>
-            <Link className="link li">
+            <span className="link li">
+              {/* Changed <Link> to <li> */}
               Shop
               <div className="categories ">
                 <span>
@@ -90,13 +91,9 @@ function Header() {
                   />
                 </span>
               </div>
-            </Link>
-            <Link className="link li" to={"/"}>
-              Journal
-            </Link>
-            <Link className="link li" to={"/"}>
-              About
-            </Link>
+            </span>
+            <span className="link li">Journal</span>
+            <span className="link li">About</span>
           </ul>
         </div>
         <div className="middle">
@@ -132,7 +129,7 @@ function Header() {
             <div className="serach">
               <input
                 type="text"
-                placeholder="search here.."
+                placeholder="Search here.."
                 value={searchQuery}
                 onKeyUp={searchQueryHandler}
                 onChange={(e) => setSearchQuery(e.target.value)}

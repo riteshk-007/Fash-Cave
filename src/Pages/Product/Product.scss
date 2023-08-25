@@ -8,25 +8,77 @@
   .left {
     width: 100%;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
     @include md {
       width: 60%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
     }
-    .mySwiper {
-      .slides {
-        width: 100%;
-        height: 700px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-          object-fit: cover;
-          height: 100%;
-          width: 100%;
-          user-select: none;
-          @include md {
-            width: auto;
-          }
+    @include ml {
+      flex-direction: column-reverse;
+    }
+    @include lg {
+      flex-direction: row;
+    }
+    .img-card {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      @include md {
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+      @include ml {
+        justify-content: flex-start;
+        flex-direction: row;
+      }
+      @include lg {
+        flex-direction: column;
+        width: 20%;
+      }
+      img {
+        width: 75px;
+        height: 115px;
+        object-fit: cover;
+        margin: 10px 5px;
+        border-radius: 3px;
+        transition: all ease-in 0.1s;
+        cursor: pointer;
+        @include md {
+          width: 100px;
+          height: 140px;
         }
+        &:hover {
+          filter: brightness(0.75);
+        }
+      }
+    }
+    .slides {
+      width: 100%;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        user-select: none;
+        @include md {
+          width: auto;
+          overflow: hidden;
+        }
+      }
+      @include md {
+        width: 80%;
       }
     }
   }
@@ -42,12 +94,16 @@
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      gap: 30px 0;
+      gap: 25px 0;
       height: 100%;
       margin-left: 10px;
       .title {
         font-size: 25px;
         font-weight: 600;
+      }
+      .subtitle {
+        font-size: 15px;
+        color: gray;
       }
       .price {
         font-size: 22px;
@@ -157,7 +213,7 @@
         width: 100%;
         padding: 10px;
         @include md {
-          width: 50%;
+          width: 80%;
         }
         p {
           font-size: 14px;
