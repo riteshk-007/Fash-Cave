@@ -26,7 +26,7 @@ function Products() {
       setLoading(false);
       try {
         const { data } = await fetchDataFromApi(
-          `/api/products?populate=*&[filters][categories][id]=${id.category}`
+          `/api/products?populate=*&[filters][categories] [id]=${id.category}`
         );
         setProducts(data);
       } catch (error) {

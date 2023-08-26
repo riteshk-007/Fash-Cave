@@ -81,7 +81,7 @@
         .left {
           width: 40%;
           img {
-            object-fit: cover;
+            object-fit: contain;
             height: 75%;
             width: 85%;
             @include md {
@@ -132,6 +132,19 @@
             cursor: pointer;
           }
         }
+      }
+      &::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgb(214, 214, 214); /* color of the tracking area */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgb(54, 54, 54); /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid rgb(53, 53, 53); /* creates padding around scroll thumb */
       }
     }
   }
@@ -191,6 +204,41 @@
         &:hover {
           color: #646464;
         }
+      }
+    }
+  }
+  .cart-empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    span {
+      font-size: 200px;
+      color: #b8b8b8;
+    }
+    h3 {
+      font-family: "Quattrocento";
+    }
+    p {
+      font-family: "Quattrocento";
+      margin: 10px 0;
+    }
+    .btn {
+      background: #000;
+      margin: 10px 5px;
+      color: #fff;
+      padding: 15px 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: capitalize;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-decoration: none;
+      &:hover {
+        background: rgb(87, 87, 87);
       }
     }
   }

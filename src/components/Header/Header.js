@@ -8,6 +8,7 @@ import { PiUserCircleThin } from "react-icons/pi";
 import { BiMenu, BiSearch } from "react-icons/bi";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -16,6 +17,7 @@ function Header() {
   const [cart, setCart] = useState(false);
   const navigate = useNavigate();
 
+  const { cartItem } = useSelector((state) => state.cart);
   const searchQueryHandler = (event) => {
     if (
       (event.key === "Enter" || event === "searchButton") &&
@@ -123,7 +125,7 @@ function Header() {
             onClick={() => setCart(true)}
           >
             <BsHandbag className="icon" fontSize={18} />
-            <span>0</span>
+            {cartItem.length > 0 && <span>{cartItem.length}</span>}
           </span>
           {show && (
             <div className="serach">

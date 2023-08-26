@@ -13,6 +13,8 @@ import {
 } from "react-icons/ai";
 import { fetchDataFromApi } from "../../utils/api";
 import { ContextApp } from "../../utils/Context";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/CartSlice";
 
 // ToastContainer configuration for notifications
 <ToastContainer
@@ -37,11 +39,11 @@ function Product() {
   const [image, setImage] = useState(null);
 
   const { id } = useParams();
-
+  const dispatch = useDispatch();
   // Function to handle the "Add to Cart" button click
   const handleClick = () => {
     setQuantity(1);
-    toast.success("Added To Cart", {
+    toast.success("Success. Check your cart!", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -51,6 +53,12 @@ function Product() {
       progress: undefined,
       theme: "dark",
     });
+    dispatch(
+      addToCart({
+        ...product?.[0],
+        quantity,
+      })
+    );
   };
 
   // Fetch product data based on the ID parameter
@@ -70,7 +78,7 @@ function Product() {
       }
     };
     fetchProductData();
-  }, [id, setLoading, loading]);
+  }, [id, setLoading]);
 
   // Render loading bubbles if data is loading
   if (!loading) {
