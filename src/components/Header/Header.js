@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.scss";
 import Mobile from "../Mobile/Mobile";
 import Cart from "../Cart/Cart";
@@ -15,7 +15,6 @@ function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showmenu, setShowMenu] = useState(false);
   const [cart, setCart] = useState(false);
-  const navigate = useNavigate();
 
   const { cartItem } = useSelector((state) => state.cart);
   const searchQueryHandler = (event) => {
@@ -23,7 +22,6 @@ function Header() {
       (event.key === "Enter" || event === "searchButton") &&
       searchQuery.length > 0
     ) {
-      navigate(`/search/${searchQuery}`);
       setShow(false);
       setSearchQuery("");
     }
