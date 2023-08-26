@@ -4,28 +4,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FaRegHeart } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 
 function NewArrivals() {
   const product = [
     {
       id: 10,
-      img: "https://gatsby-ecommerce-theme.netlify.app/products/shirt1.jpg",
-      title: "Classic T-Shirt",
-      price: 699,
+      img: "https://res.cloudinary.com/dkbrxxyxn/image/upload/v1692781908/89cd3dc2_185f_45a6_8b19_29b81641_6304a0311d.jpg",
     },
     {
       id: 11,
-      img: "https://gatsby-ecommerce-theme.netlify.app/products/shirt2.jpg",
-      title: "Classic T-Shirt",
-      price: 699,
+      img: "https://res.cloudinary.com/dkbrxxyxn/image/upload/v1692781992/a31023a4_c886_4ae8_84cf_e8aa9a5b_4c33d90375.jpg",
     },
     {
       id: 12,
-      img: "https://gatsby-ecommerce-theme.netlify.app/products/shirt3.jpg",
-      title: "Classic T-Shirt",
-      price: 699,
+      img: "https://res.cloudinary.com/dkbrxxyxn/image/upload/v1692782080/5b4fc687_b93b_4141_aeb6_1bd82db7_8e73b03391.jpg",
     },
   ];
   return (
@@ -65,13 +58,6 @@ function NewArrivals() {
                 <Link to={`/product/${item.id}`} className="slide link">
                   <div className="card">
                     <img src={item.img} alt="" />
-                    <span>
-                      <h5>{item.title}</h5>
-                      <p>₹ {item.price}</p>
-                    </span>
-                    <div>
-                      <FaRegHeart className="heart" />
-                    </div>
                   </div>
                 </Link>
               </SwiperSlide>

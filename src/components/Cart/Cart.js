@@ -2,13 +2,15 @@ import React, { useMemo } from "react";
 import "./Cart.scss";
 import { MdOutlineClose } from "react-icons/md";
 import { BsFillCartXFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../store/CartSlice";
 
 function Cart({ setCart }) {
   const { cartItem } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const subTotal = useMemo(() => {
     return cartItem.reduce(
@@ -65,7 +67,14 @@ function Cart({ setCart }) {
               <span>₹ {subTotal}.00</span>
             </div>
             <p>Taxes and shipping will be calculated at checkout</p>
-            <button>Checkout</button>
+            <button
+              onClick={() => {
+                navigate("/payment");
+                setCart(false);
+              }}
+            >
+              Checkout
+            </button>
             <div className="return">
               <Link className="link" to={"/"} onClick={() => setCart(false)}>
                 CONTINUE SHOPPING

@@ -44,7 +44,7 @@ function Product() {
   const handleClick = () => {
     setQuantity(1);
     toast.success("Success. Check your cart!", {
-      position: "top-right",
+      position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,

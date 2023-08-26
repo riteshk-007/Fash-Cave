@@ -61,7 +61,7 @@
           position: relative;
           img {
             height: 85%;
-            object-fit: cover;
+            object-fit: contain;
             cursor: pointer;
           }
           span {

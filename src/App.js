@@ -7,6 +7,7 @@ import Products from "./Pages/Products/Products";
 import Product from "./Pages/Product/Product";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Payment from "./Pages/Payment/Payment";
 function App() {
   return (
     <div className="app">
@@ -16,6 +17,7 @@ function App() {
         <Route path="/products/:category" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </div>
