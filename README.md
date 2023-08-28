@@ -1,4 +1,4 @@
-## **Fash-Cave: Your Fashion Inspiration Repository**
+## Fash-Cave: Your Fashion Inspiration Repository
 
 ![image](https://github.com/riteshk-007/Fash-Cave/assets/135107962/8ff15316-db3c-4118-8cf0-8f133287e656)
 
